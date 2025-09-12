@@ -54,3 +54,11 @@ body {
   height: 40px;
   border: 1px solid black;
 }
+
+.snake {
+  background-color: green;
+}
+
+.ladder {
+  background-color: brown;
+}

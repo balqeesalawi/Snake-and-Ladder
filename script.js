@@ -1,7 +1,7 @@
 let player = document.querySelector(".player")
 const squares = document.querySelectorAll(".square")
-const snake = "snake"
-const ladder = "ladder"
+const snake = document.querySelector(".snake")
+const ladder = document.querySelector(".ladder")
 const dice = document.querySelector("#dice")
 let randomNum = 0
 let steps = 0
@@ -10,7 +10,10 @@ let steps = 0
 const getRandomNumber = () => {
   randomNum = Math.ceil(Math.random() * 6)
   dice.innerText = randomNum
-  squares[randomNum - 1].append(player)
+  if (randomNum) {
+    squares[randomNum - 1].append(player)
+    randomNum += randomNum
+  }
 }
 
 const movingPlayer = () => {}
