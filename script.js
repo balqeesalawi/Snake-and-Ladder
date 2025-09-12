@@ -10,10 +10,7 @@ let steps = 0
 const getRandomNumber = () => {
   randomNum = Math.ceil(Math.random() * 6)
   dice.innerText = randomNum
-  if (randomNum) {
-    steps = squares[randomNum].append(player)
-  }
-  console.log(`steps=${steps}`)
+  squares[randomNum - 1].append(player)
 }
 
 const movingPlayer = () => {}
