@@ -21,7 +21,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 2px;
+  gap: 3px;
 }
 
 .players {
@@ -34,10 +34,11 @@ body {
   background-color: white;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 
   font-size: 20px;
+  padding: 4px;
   height: 60px;
 }
 
