@@ -13,9 +13,19 @@ const getRandomNumber = () => {
   steps += randomNum
   squares[steps - 1].append(player)
   console.log(steps)
-  // if ((steps += randomNum)) {
-  //   squares[steps - 1].append(player)
-  // }
+
+  if (squares[steps - 1].innerText === "5 Ladder") {
+    squares[steps + 3].append(player)
+    steps = parseInt(squares[steps + 3].innerText)
+    console.log(steps)
+  } else if (squares[steps - 1].innerText === "8 Snake") {
+    squares[steps - 6].append(player)
+    steps = parseInt(squares[steps - 6].innerText)
+    console.log(steps)
+  }
+
+  if (steps === 10) {
+  }
 }
 
 const movingPlayer = () => {}
