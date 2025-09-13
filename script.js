@@ -14,7 +14,7 @@ const getRandomNumber = () => {
   dice.innerText = randomNum
   steps += randomNum
 
-  if (steps < 10) {
+  if (steps < 100) {
     squares[steps - 1].appendChild(player)
     console.log(steps)
     if (squares[steps - 1].innerText === "5 Ladder") {
@@ -26,7 +26,7 @@ const getRandomNumber = () => {
       steps = parseInt(squares[steps - 6].innerText)
       console.log(steps)
     }
-  } else if (steps > 10) {
+  } else if (steps > 100) {
     steps = steps - randomNum
     console.log(steps)
   } else {
