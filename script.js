@@ -3,6 +3,8 @@ const squares = document.querySelectorAll(".square")
 const snake = document.querySelector(".snake")
 const ladder = document.querySelector(".ladder")
 const dice = document.querySelector("#dice")
+const winner = document.querySelector("#header")
+
 let randomNum = 0
 let steps = 0
 
@@ -25,6 +27,7 @@ const getRandomNumber = () => {
   }
 
   if (steps === 10) {
+    winner.innerText = "Winner!"
   }
 }
 
