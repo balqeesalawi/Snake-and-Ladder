@@ -10,12 +10,15 @@ let steps = 0
 const getRandomNumber = () => {
   randomNum = Math.ceil(Math.random() * 6)
   dice.innerText = randomNum
-  if (randomNum) {
-    squares[randomNum - 1].append(player)
-    randomNum += randomNum
-  }
+  steps += randomNum
+  squares[steps - 1].append(player)
+  console.log(steps)
+  // if ((steps += randomNum)) {
+  //   squares[steps - 1].append(player)
+  // }
 }
 
 const movingPlayer = () => {}
 
 dice.addEventListener("click", getRandomNumber)
+dice.addEventListener("click", movingPlayer)
