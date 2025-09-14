@@ -3,10 +3,7 @@ body {
   margin: 0;
   height: 100vh;
   width: 100vw;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -14,14 +11,12 @@ body {
   color: #ff3131;
 }
 
-#Game {
-  height: 80vh;
+#game {
+  height: 90vh;
   width: 1000px;
-  background-color: black;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 1px;
+
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .players {
@@ -30,22 +25,30 @@ body {
   width: 130px;
 }
 
-.square {
-  background-color: white;
-
+.row {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+}
 
+.row:nth-child(even) {
+  background-color: #ff3131;
+  display: flex;
+  flex-direction: row-reverse;
+  
+}
+
+.square {
   font-size: 14px;
   padding: 4px;
-  height: 35px;
+  height: 40px;
+  width: 80px;
+  border: 1px solid black;
 }
 
 .player {
   background-color: #ff3131;
   border-radius: 100%;
-  padding: 10px;
+  width: 30px;
+  height: 20px;
 }
 
 #dice {
@@ -55,10 +58,11 @@ body {
   border: 1px solid black;
 }
 
-.snake {
-  background-color: green;
-}
-
 .ladder {
   background-color: brown;
+}
+
+img {
+  width: 25px;
+  height: 25px;
 }
