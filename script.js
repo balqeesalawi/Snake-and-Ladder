@@ -1,15 +1,14 @@
 let player = document.querySelectorAll(".player")
-const snake = document.querySelector(".snake")
-const ladder = document.querySelector(".ladder")
 const dice = document.querySelector("#dice")
 const winner = document.querySelector("#header")
 const playersNum = document.querySelectorAll(".players")
+const playAgain = document.querySelector("#reset")
 
 let game = document.querySelector("#game")
 let gameOver = false
 
 let randomNum = 0
-let playerSteps = [0, 0, 0, 0]
+let playerSteps = [0, 0]
 let playerTurn = 0
 let steps = 0
 
@@ -29,7 +28,20 @@ for (let i = 0; i < 10; i++) {
 }
 const squares = document.querySelectorAll(".square")
 
-const getRandomNumber = () => {
+squares[26].classList.add("snake")
+squares[50].classList.add("snake")
+squares[63].classList.add("snake")
+squares[97].classList.add("snake")
+squares[91].classList.add("snake")
+let snakes = document.querySelectorAll(".snake")
+
+squares[4].classList.add("ladder")
+squares[21].classList.add("ladder")
+squares[67].classList.add("ladder")
+squares[36].classList.add("ladder")
+let ladders = document.querySelectorAll(".ladder")
+
+const playGame = () => {
   randomNum = Math.ceil(Math.random() * 6)
 
   dice.innerText = randomNum
@@ -49,13 +61,27 @@ const getRandomNumber = () => {
 
   if (steps < 100) {
     squares[steps - 1].appendChild(player[playerTurn])
+    // let poo = parseInt(squares[steps - 1].innerText)
+
+    // for (let i = steps; i < poo; i++) {
+    //   squares[i].append[playerTurn]
+    // }
+    // console.log(poo)
+
+    // if (squares[playerSteps[0] - 1].innerText === "5") {
+    //   squares[playerSteps[0] + 3].appendChild(player[playerTurn]) //taking player from 5 to 8
+    //   steps = parseInt(squares[playerSteps[0] + 3].innerText)
+    // } else if (squares[playerSteps[0] - 1].innerText === "27") {
+    //   squares[playerSteps[0] - 6].appendChild(player[playerTurn]) // taking player from 8 to 3
+    //   steps = parseInt(squares[playerSteps[0] - 6].innerText)
+    // }
   } else if (steps > 100) {
     playerSteps[playerTurn] = steps - randomNum
   } else {
     squares[steps - 1].appendChild(player[playerTurn])
     winner.innerText = "Winner!"
     gameOver = true
-    steps = 0
+    steps = steps
   }
 
   if (!gameOver) {
@@ -68,14 +94,11 @@ const getRandomNumber = () => {
   }
 }
 
-dice.addEventListener("click", getRandomNumber)
+dice.addEventListener("click", playGame)
 
-// if (squares[playerSteps[0] - 1].innerText === "5 Ladder") {
-//   squares[playerSteps[0] + 3].appendChild(player[playerTurn]) //taking player from 5 to 8
-//   steps = parseInt(squares[playerSteps[0] + 3].innerText)
-// } else if (squares[playerSteps[0] - 1].innerText === "8 Snake") {
-//   squares[playerSteps[0] - 6].appendChild(player[playerTurn]) // taking player from 8 to 3
-//   steps = parseInt(squares[playerSteps[0] - 6].innerText)
-// }
+//https://www.w3schools.com/jsref/met_loc_reload.asp
+playAgain.addEventListener("click", () => {
+  location.reload()
+})
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
