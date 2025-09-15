@@ -6,6 +6,7 @@ const winner = document.querySelector("#header")
 const playersNum = document.querySelectorAll(".players")
 
 let game = document.querySelector("#game")
+let gameOver = false
 
 let randomNum = 0
 let playerSteps = [0, 0, 0, 0]
@@ -30,34 +31,41 @@ const squares = document.querySelectorAll(".square")
 
 const getRandomNumber = () => {
   randomNum = Math.ceil(Math.random() * 6)
+
   dice.innerText = randomNum
   steps += randomNum
 
   console.log("playerTurn", playerTurn)
   if (playerTurn === 0) {
-    steps = playerSteps[0]
-    // playerTurn++
+    playerSteps[0] = steps
   } else if (playerTurn === 1) {
-    steps = playerSteps[1]
-    // playerTurn++
+    playerSteps[1] = steps
   } else if (playerTurn === 2) {
-    steps = playerSteps[2]
-    // playerTurn++
+    playerSteps[2] = steps
   } else {
-    steps = playerSteps[3]
-    // playerTurn++
+    playerSteps[3] = steps
   }
+  console.log(playerSteps)
 
   if (steps < 100) {
     squares[steps - 1].appendChild(player[playerTurn])
-    console.log(playerSteps)
   } else if (steps > 100) {
-    steps = steps - randomNum
+    playerSteps[playerTurn] = steps - randomNum
   } else {
     squares[steps - 1].appendChild(player[playerTurn])
     winner.innerText = "Winner!"
+    gameOver = true
+    steps = 0
   }
-  playerTurn++
+
+  if (!gameOver) {
+    playerTurn++
+    console.log(player.length)
+    if (playerTurn > player.length - 1) {
+      playerTurn = 0
+    }
+    steps = playerSteps[playerTurn]
+  }
 }
 
 dice.addEventListener("click", getRandomNumber)
