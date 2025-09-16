@@ -83,6 +83,22 @@ const playGame = () => {
       squares[steps + 25].appendChild(player[playerTurn])
 
       playerSteps[playerTurn] = parseInt(squares[steps + 25].innerText)
+    } else if (squares[steps - 1].innerText === "27") {
+      squares[steps - 23].appendChild(player[playerTurn])
+
+      playerSteps[playerTurn] = parseInt(squares[steps - 23].innerText)
+    } else if (squares[steps - 1].innerText === "51") {
+      squares[steps - 3].appendChild(player[playerTurn])
+
+      playerSteps[playerTurn] = parseInt(squares[steps - 3].innerText)
+    } else if (squares[steps - 1].innerText === "92") {
+      squares[steps - 22].appendChild(player[playerTurn])
+
+      playerSteps[playerTurn] = parseInt(squares[steps - 22].innerText)
+    } else if (squares[steps - 1].innerText === "98") {
+      squares[steps - 64].appendChild(player[playerTurn])
+
+      playerSteps[playerTurn] = parseInt(squares[steps - 64].innerText)
     }
   } else if (steps > 100) {
     playerSteps[playerTurn] = steps - randomNum
