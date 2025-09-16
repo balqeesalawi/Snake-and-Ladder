@@ -34,6 +34,13 @@ squares[97].classList.add("snake")
 squares[91].classList.add("snake")
 let snakes = document.querySelectorAll(".snake")
 
+let snakeImg = document.createElement("img")
+snakeImg.setAttribute("src", "./snake.gif")
+snakeImg.style.width = "50px"
+snakeImg.style.height = "40px"
+
+squares[26].appendChild(snakeImg)
+
 squares[7].classList.add("ladder")
 squares[58].classList.add("ladder")
 squares[67].classList.add("ladder")
