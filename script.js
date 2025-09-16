@@ -116,6 +116,7 @@ const playGame = () => {
     steps = steps
   }
 
+  winner.innerText = `${playerTurn + 1} Turn!`
   if (!gameOver) {
     playerTurn++
     console.log(player.length)

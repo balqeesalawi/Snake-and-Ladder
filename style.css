@@ -6,14 +6,25 @@ body {
   margin: 0;
   height: 100vh;
   width: 100vw;
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+h1 {
+  font-size: 170px;
+  text-shadow: 10px 10px 10px #000000;
+  animation: flash;
+  animation-duration: 4.5s;
+  animation-iteration-count: infinite;
+}
+
 #home {
-  color: #ff3131;
+  color: #ff3131cb;
 }
 
 #game {
@@ -22,12 +33,6 @@ body {
 
   display: flex;
   flex-direction: column-reverse;
-}
-
-.players {
-  background-color: #ff3131;
-  border: none;
-  width: 130px;
 }
 
 .row {
@@ -40,7 +45,7 @@ body {
 }
 
 .square {
-  font-size: 14px;
+  font-size: 18px;
   padding: 4px;
   height: 7.5vh;
   width: 110px;
@@ -80,6 +85,31 @@ img {
 }
 
 .player {
-  animation: lightSpeedInLeft;
-  animation-duration: 2s;
+  animation: bounce;
+  animation-duration: 3s;
+}
+
+.start {
+  background-color: #ff3131cb;
+  border: 2px solid rgba(0, 0, 0, 0.772);
+  border-radius: 30px;
+  width: 250px;
+  height: 40px;
+  box-shadow: 10px 10px 10px #000000;
+
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 25px;
+}
+
+a {
+  color: rgba(0, 0, 0, 0.772);
+  text-decoration: none;
+}
+
+.buttons {
+  display: flex;
+  align-items: space-around;
+  justify-content: center;
 }
