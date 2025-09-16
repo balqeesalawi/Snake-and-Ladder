@@ -30,21 +30,19 @@ const squares = document.querySelectorAll(".square")
 
 squares[26].classList.add("snake")
 squares[50].classList.add("snake")
-squares[63].classList.add("snake")
 squares[97].classList.add("snake")
 squares[91].classList.add("snake")
 let snakes = document.querySelectorAll(".snake")
 
-squares[4].classList.add("ladder")
-squares[21].classList.add("ladder")
+squares[7].classList.add("ladder")
+squares[58].classList.add("ladder")
 squares[67].classList.add("ladder")
 squares[36].classList.add("ladder")
 let ladders = document.querySelectorAll(".ladder")
 
 const playGame = () => {
   randomNum = Math.ceil(Math.random() * 6)
-
-  dice.innerText = randomNum
+  randomNum = dice.innerText = randomNum
   steps += randomNum
 
   console.log("playerTurn", playerTurn)
@@ -65,16 +63,27 @@ const playGame = () => {
 
     // for (let i = steps; i < poo; i++) {
     //   squares[i].append[playerTurn]
+    //   squares[steps - 1].appendChild(player[playerTurn])
     // }
     // console.log(poo)
 
-    // if (squares[playerSteps[0] - 1].innerText === "5") {
-    //   squares[playerSteps[0] + 3].appendChild(player[playerTurn]) //taking player from 5 to 8
-    //   steps = parseInt(squares[playerSteps[0] + 3].innerText)
-    // } else if (squares[playerSteps[0] - 1].innerText === "27") {
-    //   squares[playerSteps[0] - 6].appendChild(player[playerTurn]) // taking player from 8 to 3
-    //   steps = parseInt(squares[playerSteps[0] - 6].innerText)
-    // }
+    if (squares[steps - 1].innerText === "8") {
+      squares[steps + 20].appendChild(player[playerTurn])
+
+      playerSteps[playerTurn] = parseInt(squares[steps + 20].innerText)
+    } else if (squares[steps - 1].innerText === "37") {
+      squares[steps + 7].appendChild(player[playerTurn])
+
+      playerSteps[playerTurn] = parseInt(squares[steps + 7].innerText)
+    } else if (squares[steps - 1].innerText === "59") {
+      squares[steps + 21].appendChild(player[playerTurn])
+
+      playerSteps[playerTurn] = parseInt(squares[steps + 21].innerText)
+    } else if (squares[steps - 1].innerText === "68") {
+      squares[steps + 25].appendChild(player[playerTurn])
+
+      playerSteps[playerTurn] = parseInt(squares[steps + 25].innerText)
+    }
   } else if (steps > 100) {
     playerSteps[playerTurn] = steps - randomNum
   } else {
