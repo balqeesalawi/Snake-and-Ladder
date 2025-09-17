@@ -8,9 +8,13 @@ const ladderPopUp = document.querySelector("#ladderPopUp")
 const winningPopUp = document.querySelector("#winningPopUp")
 const confirmation = document.querySelectorAll(".confirm")
 const direction = document.querySelectorAll(".direction")
-const audio = document.querySelector("audio")
+const audio = document.querySelector(".clickOn")
 const playAgain = document.querySelector("#playAgain")
 const fireworks = document.querySelector(".fireworks")
+const winning = document.querySelector(".winning")
+const snakeSound = document.querySelector(".snakeSound")
+const ladderSound = document.querySelector(".ladderSound")
+const song = document.querySelector(".backgroundSong")
 
 let game = document.querySelector("#game")
 let gameOver = false
@@ -20,7 +24,10 @@ let playerSteps = [0, 0]
 let playerTurn = 0
 let steps = 0
 
-console.log(direction)
+song.play()
+winning.pause()
+snakeSound.pause()
+ladderSound.pause()
 
 let num = 1
 for (let i = 0; i < 10; i++) {
@@ -56,27 +63,30 @@ squares[36].classList.add("ladder")
 let ladders = document.querySelectorAll(".ladder")
 
 const displaySnakePopUps = () => {
-  snakePopUp.style.opacity = 1
+  snakePopUp.style.visibility = "visible"
   snakePopUp.style.animation = "bounceIn"
   snakePopUp.style.animationDuration = "2s"
   document.body.style.boxShadow = "inset 200px 200px 600px black"
   document.body.style.animation = "headShake"
   document.body.style.animationDuration = "3ms"
   document.body.style.animationIterationCount = "infinite"
+  snakeSound.play()
 }
 
 const displayLadderPopUps = () => {
-  ladderPopUp.style.opacity = 1
+  ladderPopUp.style.visibility = "visible"
   ladderPopUp.style.animation = "bounceIn"
   ladderPopUp.style.animationDuration = "2s"
   document.body.style.boxShadow = "inset 200px 200px 600px black"
+  ladderSound.play()
 }
 const displayWinningPopUps = () => {
-  winningPopUp.style.opacity = 1
+  winningPopUp.style.visibility = "visible"
   winningPopUp.style.animation = "bounceIn"
   winningPopUp.style.animationDuration = "2s"
   document.body.style.boxShadow = "inset 200px 200px 600px black"
-  fireworks.style.opacity = 1
+  fireworks.style.visibility = "visible"
+  winning.play()
 }
 
 const checkForSnakeAndLadder = () => {
@@ -84,7 +94,7 @@ const checkForSnakeAndLadder = () => {
     displayLadderPopUps()
     squares[steps + 20].appendChild(player[playerTurn])
 
-    direction[0].innerText = "you will go up to square 29!"
+    direction[0].innerText = "you sent up to square 29!"
 
     playerSteps[playerTurn] = parseInt(squares[steps + 20].innerText)
   } else if (squares[steps - 1].innerText === "37") {
@@ -167,6 +177,7 @@ const playGame = () => {
     update.innerText = ""
     direction[2].innerText = ` player ${playerTurn + 1} Wins!`
     dice.remove()
+    reset.remove()
   }
 
   if (!gameOver) {
@@ -195,9 +206,17 @@ playAgain.addEventListener("click", () => {
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
-confirmation[(0, 1)].addEventListener("click", () => {
-  snakePopUp.style.opacity = 0
-  ladderPopUp.style.opacity = 0
+confirmation[0].addEventListener("click", () => {
+  snakePopUp.style.visibility = "hidden"
+  ladderPopUp.style.visibility = "hidden"
+  document.body.style.boxShadow = "none"
+  document.body.style.animation = "none"
+  audio.play()
+})
+
+confirmation[1].addEventListener("click", () => {
+  snakePopUp.style.visibility = "hidden"
+  ladderPopUp.style.visibility = "hidden"
   document.body.style.boxShadow = "none"
   document.body.style.animation = "none"
   audio.play()
