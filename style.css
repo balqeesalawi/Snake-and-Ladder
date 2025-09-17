@@ -28,9 +28,9 @@ body {
 }
 
 h1 {
-  font-size: 170px;
+  font-size: 150px;
   text-shadow: 10px 10px 10px #000000;
-  animation: flash;
+  animation: pulse;
   animation-duration: 4.5s;
   animation-iteration-count: infinite;
 }
@@ -114,7 +114,7 @@ img {
 }
 
 .start {
-  background-color: #ff3131ce;
+  background-color: #ff3131ed;
   border: 2px solid rgba(0, 0, 0, 0.772);
   border-radius: 30px;
   width: 250px;
@@ -237,4 +237,8 @@ h3 {
   animation-duration: 2s; */
 
   visibility: hidden;
+}
+
+#mute {
+  margin-bottom: 200px;
 }

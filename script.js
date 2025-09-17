@@ -94,56 +94,56 @@ const checkForSnakeAndLadder = () => {
     displayLadderPopUps()
     squares[steps + 20].appendChild(player[playerTurn])
 
-    direction[0].innerText = "you sent up to square 29!"
+    direction[0].innerText = "you have been sent up to square 29!"
 
     playerSteps[playerTurn] = parseInt(squares[steps + 20].innerText)
   } else if (squares[steps - 1].innerText === "37") {
     displayLadderPopUps()
     squares[steps + 7].appendChild(player[playerTurn])
 
-    direction[0].innerText = "you will go up to square 45!"
+    direction[0].innerText = "you have been sent up to square 45!"
 
     playerSteps[playerTurn] = parseInt(squares[steps + 7].innerText)
   } else if (squares[steps - 1].innerText === "59") {
     displayLadderPopUps()
     squares[steps + 21].appendChild(player[playerTurn])
 
-    direction[0].innerText = "you will go up to square 81!"
+    direction[0].innerText = "you have been sent up to square 81!"
 
     playerSteps[playerTurn] = parseInt(squares[steps + 21].innerText)
   } else if (squares[steps - 1].innerText === "68") {
     displayLadderPopUps()
     squares[steps + 25].appendChild(player[playerTurn])
 
-    direction[0].innerText = "you will go up to square 94!"
+    direction[0].innerText = "you have been sent up to square 94!"
 
     playerSteps[playerTurn] = parseInt(squares[steps + 25].innerText)
   } else if (squares[steps - 1].innerText === "27") {
     displaySnakePopUps()
     squares[steps - 23].appendChild(player[playerTurn])
 
-    direction[1].innerText = "you will go down to square 5!"
+    direction[1].innerText = "you have been sent down to square 5!"
 
     playerSteps[playerTurn] = parseInt(squares[steps - 23].innerText)
   } else if (squares[steps - 1].innerText === "51") {
     displaySnakePopUps()
     squares[steps - 3].appendChild(player[playerTurn])
 
-    direction[1].innerText = "you will go down to square 49!"
+    direction[1].innerText = "you have been sent to square 49!"
 
     playerSteps[playerTurn] = parseInt(squares[steps - 3].innerText)
   } else if (squares[steps - 1].innerText === "92") {
     displaySnakePopUps()
     squares[steps - 22].appendChild(player[playerTurn])
 
-    direction[1].innerText = "you will go down to square 71!"
+    direction[1].innerText = "you have been sent down to square 71!"
 
     playerSteps[playerTurn] = parseInt(squares[steps - 22].innerText)
   } else if (squares[steps - 1].innerText === "98") {
     displaySnakePopUps()
     squares[steps - 64].appendChild(player[playerTurn])
 
-    direction[1].innerText = "you will go down to square 35!"
+    direction[1].innerText = "you have been sent down to square 35!"
 
     playerSteps[playerTurn] = parseInt(squares[steps - 64].innerText)
   }
@@ -156,13 +156,11 @@ const playGame = () => {
   steps += randomNum
   update.innerText = `player ${playerTurn + 1} moved ${randomNum} steps`
 
-  console.log("playerTurn", playerTurn)
   if (playerTurn === 0) {
     playerSteps[0] = steps
   } else {
     playerSteps[1] = steps
   }
-  console.log(playerSteps)
 
   if (steps < 100) {
     squares[steps - 1].appendChild(player[playerTurn])
@@ -182,7 +180,6 @@ const playGame = () => {
 
   if (!gameOver) {
     playerTurn++
-    console.log(player.length)
     if (playerTurn > player.length - 1) {
       playerTurn = 0
     }
@@ -195,7 +192,6 @@ dice.addEventListener("click", () => {
   audio.play()
 })
 
-//https://www.w3schools.com/jsref/met_loc_reload.asp
 reset.addEventListener("click", () => {
   location.reload()
 })
@@ -203,8 +199,6 @@ reset.addEventListener("click", () => {
 playAgain.addEventListener("click", () => {
   location.reload()
 })
-
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
 confirmation[0].addEventListener("click", () => {
   snakePopUp.style.visibility = "hidden"
@@ -221,5 +215,3 @@ confirmation[1].addEventListener("click", () => {
   document.body.style.animation = "none"
   audio.play()
 })
-
-// https://dev.to/shantanu_jana/how-to-play-sound-on-button-click-in-javascript-3m48

@@ -22,22 +22,35 @@
 ***
 
 ### ***Getting Started***
-
-####
-####
-
+#### To start the game, you need to press on the button that says "Let's Play!".
+#### There are two players, player one "red player" will start first.
+#### To move the players you have to press on the dice, the updates steps for each player will be shown in the header.
+#### Both players will face snakes and ladders in there way, the player who reaches to square 100 first will win
 ***
 
 ### ***Screenshots***
-####
-
-####
+#### Home Page
+![home](./screenshots/index.png)
+#### Game Page
+![game](./screenshots/game.png)
+#### When player step on ladder
+![ladder](./screenshots/ladderPop.png)
+#### When player step on snake
+![snake](./screenshots/snakePop.png)
+#### When player wins
+![win](./screenshots/winningPop.png)
 ***
 
 ### ***Future Updates***
-
+- [ ] add more players
+- [ ] animate the dice
+- [ ] change the style
 ***
 
 ### ***Credits***
-#####
+##### Math.random(): [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+##### location.reload():  [w3schools](https://www.w3schools.com/jsref/met_loc_reload.asp)
+##### pixel images:  [pixelartvillage](https://pixelartvillage.com/)
+##### sound effects:  [freessounds](https://freesound.org/)
+
 ***
