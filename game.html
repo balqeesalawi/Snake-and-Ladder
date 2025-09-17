@@ -18,24 +18,40 @@
     <title>Project One</title>
   </head>
   <body>
+    <audio autoplay unmuted>
+      <source src="./button.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <img class="fireworks" src="./fireworks.gif" alt="fireworks" />
     <h3 id="header"></h3>
-    <h3 id="update">Roll the Dice!</h3>
+    <button id="reset">Reset</button>
     <div id="game"></div>
-    <div id="snakePopUp">
-      <p>Oh No! You got eaten by a snake!</p>
-      <button class="confirm">ok</button>
-    </div>
+
     <div id="ladderPopUp">
       <p>Yay! You reached to the ladder!</p>
-      <p>You will go up!</p>
+      <p class="direction">You will go up!</p>
 
       <button class="confirm">ok</button>
     </div>
+
+    <div id="snakePopUp">
+      <p>oh no! You got eaten by a snake!</p>
+      <p class="direction">You will go down!</p>
+
+      <button class="confirm">ok</button>
+    </div>
+
+    <div id="winningPopUp">
+      <p class="direction">WINS!</p>
+
+      <button id="playAgain">Play Again</button>
+    </div>
     <div id="pieces">
-      <div class="player"><img src="./red.png" alt="red player" /></div>
-      <div class="player"><img src="./blue.png" alt="blue player" /></div>
+      <h3 id="update">Roll the Dice!</h3>
       <button id="dice">1</button>
-      <button id="reset">Play Again</button>
+      <div class="player"><img src="./red.png" alt="red player" /></div>
+      <div class="player"><img src="./yellow.png" alt="blue player" /></div>
     </div>
   </body>
 </html>
