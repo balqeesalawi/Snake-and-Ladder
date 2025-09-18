@@ -45,11 +45,6 @@ for (let i = 0; i < 10; i++) {
 }
 const squares = document.querySelectorAll(".square")
 
-let snakeImg = document.createElement("img")
-snakeImg.setAttribute("src", "./snake.gif")
-snakeImg.style.width = "50px"
-snakeImg.style.height = "40px"
-
 squares[26].classList.add("snake")
 squares[50].classList.add("snake")
 squares[97].classList.add("snake")
